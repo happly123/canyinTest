@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12A41A6F-DB01-4DF3-8A15-130F2AD7FBB5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccesses</RootNamespace>
+    <AssemblyName>DataAccesses</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="DBInsert\InsertApparatusTable.cs" />
+    <Compile Include="DBInsert\InsertApparatus_quality.cs" />
+    <Compile Include="DBInsert\InsertArchives.cs" />
+    <Compile Include="DBInsert\InsertAuthorityTable.cs" />
+    <Compile Include="DBInsert\InsertCompanyTable.cs" />
+    <Compile Include="DBInsert\InsertCounterTable.cs" />
+    <Compile Include="DBInsert\InsertCustomerTable.cs" />
+    <Compile Include="DBInsert\InsertDeviceTable.cs" />
+    <Compile Include="DBInsert\InsertDisqualification_Manager.cs" />
+    <Compile Include="DBInsert\InsertDisqualification_To.cs" />
+    <Compile Include="DBInsert\InsertGoodTable.cs" />
+    <Compile Include="DBInsert\InsertInput_storageTable.cs" />
+    <Compile Include="DBInsert\InsertLoseTable.cs" />
+    <Compile Include="DBInsert\InsertMaintainTable.cs" />
+    <Compile Include="DBInsert\InsertMaintain_detailTable.cs" />
+    <Compile Include="DBInsert\InsertMakerTable.cs" />
+    <Compile Include="DBInsert\InsertOutput_storageTable.cs" />
+    <Compile Include="DBInsert\InsertStaffTable.cs" />
+    <Compile Include="DBInsert\InsertStorage_detailsTable.cs" />
+    <Compile Include="DBInsert\InsertSupplierTable.cs" />
+    <Compile Include="DBInsert\InsertSystemLogTable.cs" />
+    <Compile Include="DBInsert\InsertTemp_storageTable.cs" />
+    <Compile Include="DBInsert\InsertUnitTable.cs" />
+    <Compile Include="DBInsert\InsertUploadTable.cs" />
+    <Compile Include="DBInsert\InsertVisit.cs" />
+    <Compile Include="DBUpdate\UpdateApparatusTable.cs" />
+    <Compile Include="DBUpdate\UpdateApparatus_quality.cs" />
+    <Compile Include="DBUpdate\UpdateArchives.cs" />
+    <Compile Include="DBUpdate\UpdateAuthorityTable.cs" />
+    <Compile Include="DBUpdate\UpdateCompanyTable.cs" />
+    <Compile Include="DBUpdate\UpdateCounterTable.cs" />
+    <Compile Include="DBUpdate\UpdateCustomerTable.cs" />
+    <Compile Include="DBUpdate\UpdateDeviceTable.cs" />
+    <Compile Include="DBUpdate\UpdateDisqualification_Manager.cs" />
+    <Compile Include="DBUpdate\UpdateDisqualification_To.cs" />
+    <Compile Include="DBUpdate\UpdateGoodsTable.cs" />
+    <Compile Include="DBUpdate\UpdateInput_storageTable.cs" />
+    <Compile Include="DBUpdate\UpdateLoseTable.cs" />
+    <Compile Include="DBUpdate\UpdateMaintainTable.cs" />
+    <Compile Include="DBUpdate\UpdateMaintain_detailTable.cs" />
+    <Compile Include="DBUpdate\UpdateMakerTable.cs" />
+    <Compile Include="DBUpdate\UpdateOutput_storage.cs" />
+    <Compile Include="DBUpdate\UpdateStaffTable.cs" />
+    <Compile Include="DBUpdate\UpdateStorage_detailsTable.cs" />
+    <Compile Include="DBUpdate\UpdateSupplierTable.cs" />
+    <Compile Include="DBUpdate\UpdateTemp_storageTable.cs" />
+    <Compile Include="DBUpdate\UpdateUnitTable.cs" />
+    <Compile Include="DBUpdate\UpdateVisit.cs" />
+    <Compile Include="GetData.cs" />
+    <Compile Include="InitDatabase.cs" />
+    <Compile Include="MaintenanceData.cs">
+      <DependentUpon>MaintenanceData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MakePrimaryKey.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchParameter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InvoicingUtil\InvoicingUtil.csproj">
+      <Project>{466056B8-8920-4507-BEB6-B9750D1A5113}</Project>
+      <Name>InvoicingUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MaintenanceData.xsc">
+      <DependentUpon>MaintenanceData.xsd</DependentUpon>
+    </None>
+    <None Include="MaintenanceData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MaintenanceData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MaintenanceData.xss">
+      <DependentUpon>MaintenanceData.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

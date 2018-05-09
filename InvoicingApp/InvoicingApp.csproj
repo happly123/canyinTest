@@ -1,0 +1,993 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4222194B-D7FA-4EFC-82DD-F0B382109243}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InvoicingApp</RootNamespace>
+    <AssemblyName>InvoicingApp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="SharpZipLib, Version=0.81.0.1407, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataExport\SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackOutStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOutStorageForm.Designer.cs">
+      <DependentUpon>BackOutStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackStorageForm.Designer.cs">
+      <DependentUpon>BackStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargospaceManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargospaceManageForm.Designer.cs">
+      <DependentUpon>CargospaceManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckRecordPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckRecordPrint.Designer.cs">
+      <DependentUpon>CheckRecordPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckRecordSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckRecordSelectForm.Designer.cs">
+      <DependentUpon>CheckRecordSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyInfoForm.Designer.cs">
+      <DependentUpon>CompanyInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="counterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="counterForm.Designer.cs">
+      <DependentUpon>counterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerDialogForm.Designer.cs">
+      <DependentUpon>customerDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPersional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPersional.Designer.cs">
+      <DependentUpon>CustomerPersional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerUnitManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerUnitManageForm.Designer.cs">
+      <DependentUpon>CustomerUnitManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DamageAccountsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DamageAccountsForm.Designer.cs">
+      <DependentUpon>DamageAccountsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DamageCountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DamageCountForm.Designer.cs">
+      <DependentUpon>DamageCountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DamageSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DamageSelectForm.Designer.cs">
+      <DependentUpon>DamageSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataExportForm.Designer.cs">
+      <DependentUpon>DataExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataRecoveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataRecoveryForm.Designer.cs">
+      <DependentUpon>DataRecoveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataUpLoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataUpLoadForm.Designer.cs">
+      <DependentUpon>DataUpLoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevicePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevicePrint.Designer.cs">
+      <DependentUpon>DevicePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="disqualificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="disqualificationForm.Designer.cs">
+      <DependentUpon>disqualificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisqualificationManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisqualificationManageForm.Designer.cs">
+      <DependentUpon>DisqualificationManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisqualificationPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisqualificationPrint.Designer.cs">
+      <DependentUpon>DisqualificationPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpArchivesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpArchivesForm.Designer.cs">
+      <DependentUpon>EmpArchivesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManageForm.Designer.cs">
+      <DependentUpon>DeviceManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileUpLoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileUpLoadForm.Designer.cs">
+      <DependentUpon>FileUpLoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbout.designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiftsStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiftsStorageForm.Designer.cs">
+      <DependentUpon>GiftsStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="goodsInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="goodsInformation.Designer.cs">
+      <DependentUpon>goodsInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="initStorageDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="initStorageDialogForm.Designer.cs">
+      <DependentUpon>initStorageDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitStorageForm.Designer.cs">
+      <DependentUpon>InitStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputRecordPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputRecordPrint.Designer.cs">
+      <DependentUpon>InputRecordPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InStorageCountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InStorageCountForm.Designer.cs">
+      <DependentUpon>InStorageCountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InStorageSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InStorageSelectForm.Designer.cs">
+      <DependentUpon>InStorageSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryCountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryCountForm.Designer.cs">
+      <DependentUpon>InventoryCountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventorySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventorySelectForm.Designer.cs">
+      <DependentUpon>InventorySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LawForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LawForm.Designer.cs">
+      <DependentUpon>LawForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogOnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogOnForm.Designer.cs">
+      <DependentUpon>LogOnForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="machineTypeDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="machineTypeDialogForm.Designer.cs">
+      <DependentUpon>machineTypeDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineTypeForm.Designer.cs">
+      <DependentUpon>MachineTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="maintenanceDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maintenanceDialogForm.Designer.cs">
+      <DependentUpon>maintenanceDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceManagementForm.Designer.cs">
+      <DependentUpon>MaintenanceManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenancePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenancePrint.Designer.cs">
+      <DependentUpon>MaintenancePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manufacturerManageDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manufacturerManageDialogForm.Designer.cs">
+      <DependentUpon>manufacturerManageDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManufacturerManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManufacturerManageForm.Designer.cs">
+      <DependentUpon>ManufacturerManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutStorageCountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutStorageCountForm.Designer.cs">
+      <DependentUpon>OutStorageCountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutStorageSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutStorageSelectForm.Designer.cs">
+      <DependentUpon>OutStorageSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="passWordChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="passWordChangeForm.Designer.cs">
+      <DependentUpon>passWordChangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PassWordManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassWordManageForm.Designer.cs">
+      <DependentUpon>PassWordManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="persionalDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="persionalDialogForm.Designer.cs">
+      <DependentUpon>persionalDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BackOutStorageForm.resx">
+      <DependentUpon>BackOutStorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackStorageForm.resx">
+      <DependentUpon>BackStorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargospaceManageForm.resx">
+      <DependentUpon>CargospaceManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckRecordPrint.resx">
+      <DependentUpon>CheckRecordPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="RDLC\CheckRecordReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="CheckRecordSelectForm.resx">
+      <DependentUpon>CheckRecordSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyInfoForm.resx">
+      <DependentUpon>CompanyInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="counterForm.resx">
+      <DependentUpon>counterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerDialogForm.resx">
+      <DependentUpon>customerDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerUnitManageForm.resx">
+      <DependentUpon>CustomerUnitManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DamageAccountsForm.resx">
+      <DependentUpon>DamageAccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DamageCountForm.resx">
+      <DependentUpon>DamageCountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DamageSelectForm.resx">
+      <DependentUpon>DamageSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataRecoveryForm.resx">
+      <DependentUpon>DataRecoveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="disqualificationForm.resx">
+      <DependentUpon>disqualificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisqualificationManageForm.resx">
+      <DependentUpon>DisqualificationManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpArchivesForm.resx">
+      <DependentUpon>EmpArchivesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiftsStorageForm.resx">
+      <DependentUpon>GiftsStorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="goodsInformation.resx">
+      <DependentUpon>goodsInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="initStorageDialogForm.resx">
+      <DependentUpon>initStorageDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitStorageForm.resx">
+      <DependentUpon>InitStorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputRecordPrint.resx">
+      <DependentUpon>InputRecordPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="RDLC\InputRecordReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="InStorageCountForm.resx">
+      <DependentUpon>InStorageCountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InStorageSelectForm.resx">
+      <DependentUpon>InStorageSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryCountForm.resx">
+      <DependentUpon>InventoryCountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventorySelectForm.resx">
+      <DependentUpon>InventorySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogOnForm.resx">
+      <DependentUpon>LogOnForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="machineTypeDialogForm.resx">
+      <DependentUpon>machineTypeDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineTypeForm.resx">
+      <DependentUpon>MachineTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maintenanceDialogForm.resx">
+      <DependentUpon>maintenanceDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceManagementForm.resx">
+      <DependentUpon>MaintenanceManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenancePrint.resx">
+      <DependentUpon>MaintenancePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manufacturerManageDialogForm.resx">
+      <DependentUpon>manufacturerManageDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManufacturerManageForm.resx">
+      <DependentUpon>ManufacturerManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutStorageCountForm.resx">
+      <DependentUpon>OutStorageCountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutStorageSelectForm.resx">
+      <DependentUpon>OutStorageSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="passWordChangeForm.resx">
+      <DependentUpon>passWordChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassWordManageForm.resx">
+      <DependentUpon>PassWordManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchasesStorageForm.resx">
+      <DependentUpon>PurchasesStorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="RDLC\MaintenanceReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="RDLC\SellRecordReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="sellStorageDialogForm.resx">
+      <DependentUpon>sellStorageDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellStorageForm.resx">
+      <DependentUpon>SellStorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellStoragePrint.resx">
+      <DependentUpon>SellStoragePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffForm.resx">
+      <DependentUpon>staffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="storageGoodsDialogForm.resx">
+      <DependentUpon>storageGoodsDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StorageInventoryForm.resx">
+      <DependentUpon>StorageInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplierManageDialogForm.resx">
+      <DependentUpon>supplierManageDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierManageForm.resx">
+      <DependentUpon>SupplierManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemLogForm.resx">
+      <DependentUpon>SystemLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradeNameManageForm.resx">
+      <DependentUpon>TradeNameManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitTypeForm.resx">
+      <DependentUpon>UnitTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeaponQualityAegisForm.resx">
+      <DependentUpon>WeaponQualityAegisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeaponQualityPrint.resx">
+      <DependentUpon>WeaponQualityPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="RDLC\WeaponQualityReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PurchasesStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchasesStorageForm.Designer.cs">
+      <DependentUpon>PurchasesStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnVisitForm.Designer.cs">
+      <DependentUpon>ReturnVisitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnVisitPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnVisitPrint.Designer.cs">
+      <DependentUpon>ReturnVisitPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sellStorageDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sellStorageDialogForm.Designer.cs">
+      <DependentUpon>sellStorageDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellStorageForm.Designer.cs">
+      <DependentUpon>SellStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellStoragePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellStoragePrint.Designer.cs">
+      <DependentUpon>SellStoragePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FileService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="staffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staffForm.Designer.cs">
+      <DependentUpon>staffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="storageGoodsDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="storageGoodsDialogForm.Designer.cs">
+      <DependentUpon>storageGoodsDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StorageInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StorageInventoryForm.Designer.cs">
+      <DependentUpon>StorageInventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supplierManageDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supplierManageDialogForm.Designer.cs">
+      <DependentUpon>supplierManageDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierManageForm.Designer.cs">
+      <DependentUpon>SupplierManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemLogForm.Designer.cs">
+      <DependentUpon>SystemLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TradeNameManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TradeNameManageForm.Designer.cs">
+      <DependentUpon>TradeNameManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitTypeForm.Designer.cs">
+      <DependentUpon>UnitTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeaponQualityAegisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WeaponQualityAegisForm.Designer.cs">
+      <DependentUpon>WeaponQualityAegisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeaponQualityPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WeaponQualityPrint.Designer.cs">
+      <DependentUpon>WeaponQualityPrint.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccesses\DataAccesses.csproj">
+      <Project>{12A41A6F-DB01-4DF3-8A15-130F2AD7FBB5}</Project>
+      <Name>DataAccesses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataExport\DataExport.csproj">
+      <Project>{47B79118-96BD-4EBC-94CF-94A557BA0252}</Project>
+      <Name>DataExport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InvoicingUtil\InvoicingUtil.csproj">
+      <Project>{466056B8-8920-4507-BEB6-B9750D1A5113}</Project>
+      <Name>InvoicingUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCControl\TCControl.csproj">
+      <Project>{59DF80CE-D950-49F2-9CF2-61E633BBCCE5}</Project>
+      <Name>TCControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\DataAccesses.MaintenanceData.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\titleBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottom.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cbitWaterMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\innerTitleFill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\innerTitleLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ledblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftBarButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftBarFill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftBarTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftFill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\titleb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\销售出库.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\报损查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\报损统计.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\出库查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\出库统计.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\购货入库.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\库存查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\库存统计.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\入库查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\入库统计.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\退货出库.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomerPersional.resx">
+      <DependentUpon>CustomerPersional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataExportForm.resx">
+      <DependentUpon>DataExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataUpLoadForm.resx">
+      <DependentUpon>DataUpLoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManageForm.resx">
+      <DependentUpon>DeviceManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevicePrint.resx">
+      <DependentUpon>DevicePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisqualificationPrint.resx">
+      <DependentUpon>DisqualificationPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileUpLoadForm.resx">
+      <DependentUpon>FileUpLoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LawForm.resx">
+      <DependentUpon>LawForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="RDLC\DeviceReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="persionalDialogForm.resx">
+      <DependentUpon>persionalDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="RDLC\DisqualificationReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="RDLC\ReturnVisitReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnVisitForm.resx">
+      <DependentUpon>ReturnVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnVisitPrint.resx">
+      <DependentUpon>ReturnVisitPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\db.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\退货入库.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Add.png" />
+    <Content Include="Resources\caption.png" />
+    <Content Include="Resources\Check.png" />
+    <Content Include="Resources\Close.png" />
+    <None Include="Resources\logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Resources\loginBG.png" />
+    <Content Include="Resources\Ok.png" />
+    <Content Include="Resources\PieChart.png" />
+    <Content Include="Resources\Print.png" />
+    <None Include="Service References\FileService\Arrays.xsd" />
+    <None Include="Service References\FileService\Message.xsd" />
+    <None Include="Service References\FileService\service.wsdl" />
+    <None Include="Service References\FileService\service.xsd" />
+    <None Include="Service References\FileService\service1.xsd" />
+    <None Include="法律法规\法律\中华人民共和国个人所得税法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国产品质量法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国会计法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国合同法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国国家赔偿法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国税收征收管理法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国药品管理法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国行政处罚法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国行政复议法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国行政许可法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\法律\中华人民共和国行政诉讼法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\行政法规\中华人民共和国价格法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\行政法规\中华人民共和国票据法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\行政法规\中华人民共和国行政复议法实施条例.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\行政法规\医疗器械监督管理条例.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\《一次性使用无菌医疗器械监督管理办法》（暂行）局令第24号.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\《医疗器械新产品审批规定》（试行）（局令第17号.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\《医疗器械注册管理办法》（局令第16号）.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\中华人民共和国发票管理办法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\公司注册资本登记管理规定.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\医疗器械临床试验规定.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\医疗器械广告审查办法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\医疗器械经营企业许可证管理办法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\医疗器械说明书、标签和包装标识管理规定.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\国家食品药品监督管理局听证规则.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\广告经营许可证管理办法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\政府采购信息公告管理办法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\政府采购货物和服务招标投标管理办法 .doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\有限责任公司规范意见 .doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\税务登记管理办法.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="法律法规\部门规章\药品监督行政处罚程序规定.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\init.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Resources\Reset.png" />
+    <None Include="用户手册\长白医疗器械经销管理系统操作手册.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Service References\FileService\configuration91.svcinfo" />
+    <None Include="Service References\FileService\configuration.svcinfo" />
+    <None Include="Service References\FileService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="XMLLoginUsers.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FileService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
